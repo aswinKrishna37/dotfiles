@@ -97,8 +97,8 @@ They may require additional packages and some adjustments depending on your syst
 **Do not blindly copy configuration files without checking the commands and paths first.**
 
 ## 📸 Preview
-
-Screenshots of the desktop and themes will be added here.
+Desktop
+![Desktop](screenshots/desktop.png)
 
 ---
 
