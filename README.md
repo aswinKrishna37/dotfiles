@@ -36,10 +36,17 @@ This repository contains the configuration files, themes, and scripts I use for 
 ```text
 dotfiles/
 ├── hypr/
-│   └── hyprland.lua
+│   ├── hyprland.lua
+│   └── hyprlock.conf
 ├── kitty/
 ├── mako/
 ├── themes/
+│
+├── screenshots/
+│   ├── desktop.png
+│   ├── face.png
+│   ├── lock.jpg
+│   └── wallpaper.jpg
 │
 ├── scripts/
 │   ├── theme-menu.sh
@@ -99,6 +106,8 @@ They may require additional packages and some adjustments depending on your syst
 ## 📸 Preview
 Desktop
 ![Desktop](screenshots/desktop.png)
+Hyprlock (Lock Screen — Preview)
+![Hyprlock Lock Screen Preview](screenshots/lock.jpg)
 
 ---
 

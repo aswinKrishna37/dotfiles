@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hyprlock Preview</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+    }
+
+    body {
+        font-family: "SF Pro Display", "SF Pro Display Bold", system-ui, sans-serif;
+        color: rgba(216, 222, 233, 0.70);
+    }
+
+    /* Hyprlock background */
+    .background {
+        position: fixed;
+        inset: 0;
+        background-image:
+            linear-gradient(
+                rgba(0, 0, 0, 0.08),
+                rgba(0, 0, 0, 0.08)
+            ),
+            url("../screenshots/wallpaper.jpg");
+        background-size: cover;
+        background-position: center;
+        filter:
+            blur(6px)
+            contrast(0.8916)
+            brightness(0.8172)
+            saturate(1.1696);
+        transform: scale(1.03);
+    }
+
+    /* Subtle overlay corresponding to the translucent UI */
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.03);
+        pointer-events: none;
+    }
+
+    .lockscreen {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    /* Clock */
+    .clock {
+        position: absolute;
+        left: 50%;
+        top: calc(50% + 240px);
+        transform: translate(-50%, -50%);
+        font-size: 100px;
+        font-weight: 700;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    /* Date */
+    .date {
+        position: absolute;
+        left: 50%;
+        top: calc(50% + 160px);
+        transform: translate(-50%, -50%);
+        font-size: 16px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    /* Profile image */
+    .profile {
+        position: absolute;
+        left: 50%;
+        top: calc(50% - 20px);
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    /* User label */
+    .user {
+        position: absolute;
+        left: 50%;
+        top: calc(50% - 80px);
+        transform: translate(-50%, -50%);
+        font-size: 16px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    /* Password input */
+    .input-wrapper {
+        position: absolute;
+        left: 50%;
+        top: calc(50% - 200px);
+        transform: translate(-50%, -50%);
+        width: 170px;
+        height: 50px;
+    }
+
+    .password {
+        width: 170px;
+        height: 50px;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        outline: none;
+        background: rgba(100, 114, 125, 0.4);
+        color: rgb(200, 200, 200);
+        text-align: center;
+        font-family: "SF Pro Display", system-ui, sans-serif;
+        font-size: 18px;
+        padding: 0 12px;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    .password::placeholder {
+        color: rgba(255, 255, 255, 0.60);
+        font-style: italic;
+    }
+
+    .password:focus {
+        border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    /* Music label */
+    .music {
+        position: absolute;
+        left: 50%;
+        bottom: calc(50% - 60px);
+        transform: translateX(-50%);
+        font-family: "JetBrains Mono Nerd", "SF Pro Display", monospace;
+        font-size: 9px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.70);
+        white-space: nowrap;
+    }
+
+    /* Small responsive adjustment */
+    @media (max-width: 700px) {
+        .clock {
+            font-size: 72px;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="overlay"></div>
+
+    <main class="lockscreen">
+
+        <div class="input-wrapper">
+            <input
+                class="password"
+                type="password"
+                placeholder=""
+                autocomplete="off"
+                autofocus
+            >
+        </div>
+
+        <img
+            class="profile"
+            src="../screenshots/face.png"
+            alt="Profile"
+        >
+
+        <div class="user">Hi, USER</div>
+
+        <div class="date" id="date"></div>
+
+        <div class="clock" id="clock"></div>
+
+        <div class="music">In your Eyes  The Weeknd</div>
+
+    </main>
+
+<script>
+    function updateClock() {
+        const now = new Date();
+
+        const time = now.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false
+        });
+
+        const date = now.toLocaleDateString("en-GB", {
+            weekday: "long",
+            day: "2-digit",
+            month: "long"
+        });
+
+        document.getElementById("clock").textContent = time;
+        document.getElementById("date").textContent = date;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
