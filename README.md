@@ -38,6 +38,7 @@ dotfiles/
 ├── hypr/
 │   ├── hyprland.lua
 │   └── hyprlock.conf
+│
 ├── kitty/
 ├── mako/
 ├── themes/
@@ -104,9 +105,9 @@ They may require additional packages and some adjustments depending on your syst
 **Do not blindly copy configuration files without checking the commands and paths first.**
 
 ## 📸 Preview
-Desktop
+### Desktop
 ![Desktop](screenshots/desktop.png)
-Hyprlock (Lock Screen — Preview)
+### Hyprlock (Lock Screen — Preview)
 ![Hyprlock Lock Screen Preview](screenshots/lock.jpg)
 
 ---
