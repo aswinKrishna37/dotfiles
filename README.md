@@ -41,6 +41,7 @@ dotfiles/
 │
 ├── kitty/
 ├── mako/
+│   └── config
 ├── themes/
 │
 ├── screenshots/
