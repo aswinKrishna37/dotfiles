@@ -119,14 +119,14 @@ They may require additional packages and some adjustments depending on your syst
 
 ---
 
-<!-- ## Credits
+## Credits
 
 Some components of the themes in this repository are based on or adapted from work by other creators.
 
-Waybar theme — Based on/adapted from Original Repository
-LightDM theme — Based on/adapted from Original Repository
+Waybar theme — [nicgil123](https://github.com/nicgil23/dotfiles/tree/main)
 
-All original authors retain ownership of their respective work. Their licenses and attribution requirements apply to the corresponding files. -->
+
+All original authors retain ownership of their respective work. Their licenses and attribution requirements apply to the corresponding files.
 
 ---
 
