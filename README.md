@@ -56,6 +56,12 @@ dotfiles/
 │   └── toggle-waybar.sh
 │
 ├── waybar/
+│   ├── colors/
+│   ├── cava.sh
+│   │   └── catppuccino-mocha.css
+│   │
+│   ├── config.jsonc
+│   └── style.css
 │
 └── README.md
 ```
