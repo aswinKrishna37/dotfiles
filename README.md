@@ -37,7 +37,8 @@ This repository contains the configuration files, themes, and scripts I use for 
 dotfiles/
 ├── hypr/
 │   ├── hyprland.lua
-│   └── hyprlock.conf
+│   ├── hyprlock.conf
+│   └── hypridle.conf
 │
 ├── kitty/
 ├── mako/
